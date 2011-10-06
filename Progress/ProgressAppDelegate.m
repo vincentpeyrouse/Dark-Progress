@@ -28,11 +28,10 @@
     NSRect progressViewRect = NSMakeRect(floorf((contentBounds.size.width - progressViewSize.width) / 2), floorf((contentBounds.size.height - progressViewSize.height) / 2), progressViewSize.width, progressViewSize.height);
     
     NPStrippedProgressView *progressView = [[NPStrippedProgressView alloc] initWithFrame:progressViewRect];
+    progressView.progress = .19;
     [progressView setAutoresizingMask:(NSViewWidthSizable | NSViewMaxYMargin | NSViewMinYMargin)];
     [[self.window contentView] addSubview:progressView];
-    
     [progressView startAnimating];
-    
     [coloredView release];
     [progressView release];
 

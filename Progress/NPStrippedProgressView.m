@@ -78,6 +78,8 @@ static void NPDrawStripePattern (void *info, CGContextRef context)
 
 @implementation NPStrippedProgressView
 
+@synthesize progress;
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
@@ -128,7 +130,7 @@ static void NPDrawStripePattern (void *info, CGContextRef context)
     NSRect holderRectWithoutShadow = NSMakeRect(self.bounds.origin.x, self.bounds.origin.y + 1, self.bounds.size.width, self.bounds.size.height - 1);
     NSBezierPath *holderBezierPath = [NSBezierPath bezierPathWithRoundedRect:holderRectWithoutShadow xRadius:8 yRadius:8];
     
-    NSRect progressRectPath = NSMakeRect(holderRectWithoutShadow.origin.x + 1, holderRectWithoutShadow.origin.y + 1, floorf((holderRectWithoutShadow.size.width - 2) * .75), holderRectWithoutShadow.size.height - 2);
+    NSRect progressRectPath = NSMakeRect(holderRectWithoutShadow.origin.x + 1, holderRectWithoutShadow.origin.y + 1, floorf((holderRectWithoutShadow.size.width - 2) * progress), holderRectWithoutShadow.size.height - 2);
     NSBezierPath *progressBezierPath = [NSBezierPath bezierPathWithRoundedRect:progressRectPath xRadius:6 yRadius:6];
     
     CGPathRef holderPath = [holderBezierPath quartzPath];

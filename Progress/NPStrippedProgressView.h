@@ -14,6 +14,8 @@
     CGFloat _xPatternOffset;
 }
 
+@property (assign) float progress;
+
 - (void)startAnimating;
 - (void)stopAnimating;
 
